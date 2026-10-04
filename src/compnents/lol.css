@@ -1,0 +1,189 @@
+
+/* Main Background */
+.event-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #312e81, #581c87);
+  background-size: 200% 200%;
+  animation: backgroundMove 8s ease infinite;
+}
+
+/* Heading */
+.event-title {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px #a78bfa80;
+  animation: headingAppear 1s ease;
+}
+
+/* Paragraph */
+.event-text {
+  color: #ddd6fe;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Button */
+.event-btn {
+  padding: 15px 35px;
+  border: 1px solid #c4b5fd;
+  border-radius: 14px;
+  color: white;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px #7c3aed50;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.event-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 35px #8b5cf6a0;
+  background: linear-gradient(135deg, #9333ea, #0891b2);
+}
+
+/* Button Click */
+.event-btn:active {
+  transform: scale(0.95);
+}
+
+/* Notification */
+.custom-notification {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: min(360px, calc(100vw - 30px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #34d399;
+  border-radius: 16px;
+  color: white;
+  background: linear-gradient(135deg, #064e3b, #047857);
+  box-shadow: 0 12px 35px #00000050;
+  animation: notificationShow 0.4s ease;
+}
+
+/* Notification Icon */
+.notification-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #34d399;
+  color: #064e3b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Notification Text */
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-content h3 {
+  color: #a7f3d0;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.notification-content p {
+  color: #d1fae5;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Close Button */
+.notification-close {
+  align-self: flex-start;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+  color: #6ee7b7;
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes backgroundMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes headingAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes notificationShow {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .event-title {
+    font-size: 30px;
+  }
+
+  .event-text {
+    font-size: 15px;
+  }
+
+  .event-btn {
+    padding: 13px 27px;
+    font-size: 15px;
+  }
+
+  .custom-notification {
+    top: 15px;
+    right: 15px;
+  }
+}
